@@ -6,8 +6,11 @@
   "author": "Ricky Hussmann <ricky.hussmann@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "create_stack": "./scripts/deploy.sh $npm_package_config_stack_name",
-    "delete_stack": "./scripts/destroy.sh $npm_package_config_stack_name"
+    "create_stack": "./scripts/createStack.sh $npm_package_config_stack_name",
+    "delete_stack": "./scripts/deleteStack.sh $npm_package_config_stack_name",
+    "build": "rm -rf _site && eleventy",
+    "serve": "eleventy --serve",
+    "deploy": "./scripts/deploy.sh"
   },
   "config": {
     "stack_name": "eleventy-site-template"
