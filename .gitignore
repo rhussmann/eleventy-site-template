@@ -3,6 +3,7 @@ node_modules/
 
 # Emacs
 *~
+*#
 
 # Yarn
 yarn-error.log
