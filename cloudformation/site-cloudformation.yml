@@ -3,9 +3,9 @@ Description: Creates an S3 bucket configured for hosting a static website.
 Parameters:
   DomainName:
     Type: String
-    Description: The DNS name of an existing Amazon Route 53 hosted zone e.g. jevsejev.io
+    Description: The DNS name of your website.
     AllowedPattern: (?!-)[a-zA-Z0-9-.]{1,63}(?<!-)
-    ConstraintDescription: must be a valid DNS zone name.
+    ConstraintDescription: must be a valid DNS name.
 Mappings:
   RegionMap:
     us-east-1:
