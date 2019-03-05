@@ -17,7 +17,7 @@ This template depends on the following tools being installed on your system.
 ### Setting Up the Infrastructure
 
 1. Modify the AWS Cloudformation stack in the `config.stack_name` section of `package.json`; you can change this to whatever you'd like, it's only used to identify the Cloudformation stack in AWS
-2. Modify the `ParameterValue` field in `cloudformation/parameters.json` to the domain of the site you're hosting (again, this doesn't need to be accuate; it's really only used to create a unique S3 bucket name).
+2. Modify the `config.domain_name` field in `package.json` to the domain of the site you're hosting (again, this doesn't need to be accuate; it's really only used to create a unique S3 bucket name).
 
 ### Creating the Infrastructure
 

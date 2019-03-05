@@ -1,16 +1,17 @@
 #!/usr/bin/env sh
 
 STACK_NAME=$1
-DOMAIN_NAME=`jq -r '.[] \
-    | select(.ParameterKey == "DomainName") \
-    | .ParameterValue' < cloudformation/parameters.json`
+DOMAIN_NAME=$2
+# DOMAIN_NAME=`jq -r '.[] \
+#     | select(.ParameterKey == "DomainName") \
+#     | .ParameterValue' < cloudformation/parameters.json`
 
 echo "Creating stack $STACK_NAME for domain $DOMAIN_NAME..."
 
 STACK_ID=`aws cloudformation create-stack \
     --stack-name $STACK_NAME \
     --template-body=file://cloudformation/site-cloudformation.yml \
-    --parameters=file://cloudformation/parameters.json \
+    --parameters ParameterKey=DomainName,ParameterValue=$DOMAIN_NAME \
     | jq -r '.StackId'`
 
 while [ `aws cloudformation describe-stacks --stack-name=$STACK_ID | \

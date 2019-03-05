@@ -1,9 +1,10 @@
 #!/usr/bin/env sh
 
 STACK_NAME=$1
-DOMAIN_NAME=`jq -r '.[] \
-    | select(.ParameterKey == "DomainName") \
-    | .ParameterValue' < cloudformation/parameters.json`
+DOMAIN_NAME=$2
+# DOMAIN_NAME=`jq -r '.[] \
+#     | select(.ParameterKey == "DomainName") \
+#     | .ParameterValue' < cloudformation/parameters.json`
 
 echo "Deleting stack $STACK_NAME for domain $DOMAIN_NAME..."
 

@@ -6,14 +6,16 @@
   "author": "Ricky Hussmann <ricky.hussmann@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "create_stack": "./scripts/createStack.sh $npm_package_config_stack_name",
-    "delete_stack": "./scripts/deleteStack.sh $npm_package_config_stack_name",
+    "create_stack": "./scripts/createStack.sh $npm_package_config_stack_name $npm_package_config_domain_name",
+    "delete_stack": "./scripts/deleteStack.sh $npm_package_config_stack_name $npm_package_config_domain_name",
     "build": "rm -rf _site && eleventy",
     "serve": "eleventy --serve",
-    "deploy": "./scripts/deploy.sh"
+    "deploy": "./scripts/deploy.sh",
+    "open": "./scripts/open.sh http://$npm_package_config_domain_name.s3-website-us-east-1.amazonaws.com"
   },
   "config": {
-    "stack_name": "eleventy-site-template"
+    "stack_name": "eleventy-site-template",
+    "domain_name": "example.rhussmann.com"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.7.1"
