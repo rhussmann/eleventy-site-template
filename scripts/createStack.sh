@@ -2,9 +2,6 @@
 
 STACK_NAME=$1
 DOMAIN_NAME=$2
-# DOMAIN_NAME=`jq -r '.[] \
-#     | select(.ParameterKey == "DomainName") \
-#     | .ParameterValue' < cloudformation/parameters.json`
 
 echo "Creating stack $STACK_NAME for domain $DOMAIN_NAME..."
 
