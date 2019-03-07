@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 
-DOMAIN_NAME=`jq -r '.[] | select(.ParameterKey == "DomainName") | .ParameterValue' < cloudformation/parameters.json`
+DOMAIN_NAME=$1
 
 aws s3 cp --recursive _site s3://$DOMAIN_NAME/

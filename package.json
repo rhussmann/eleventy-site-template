@@ -10,7 +10,7 @@
     "delete_stack": "./scripts/deleteStack.sh $npm_package_config_stack_name $npm_package_config_domain_name",
     "build": "rm -rf _site && eleventy",
     "serve": "eleventy --serve",
-    "deploy": "./scripts/deploy.sh",
+    "deploy": "./scripts/deploy.sh $npm_package_config_domain_name",
     "open": "./scripts/open.sh http://$npm_package_config_domain_name.s3-website-us-east-1.amazonaws.com"
   },
   "config": {
