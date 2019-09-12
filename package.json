@@ -18,6 +18,6 @@
     "domain_name": "example.rhussmann.com"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.7.1"
+    "@11ty/eleventy": "^0.9.0"
   }
 }
